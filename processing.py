@@ -52,5 +52,7 @@ def do_processing(street1, street2, locationdetail, email, phone):
 
     br["additional_information"]="Reported by the waterfront BIA"
 
+    br.submit()
+
     response = br.submit()
     return (response.read())
