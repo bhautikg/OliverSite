@@ -34,12 +34,6 @@ def do_processing(street1, street2, locationdetail, email, phone):
     #    br.find_control(type="checkbox").items[i].selected =True
     checkbox_select(br)
 
-    #br["probCrossStreet1"] = "York"
-    #br["probCrossStreet2"] = "Queens Quay W"
-    #br["probLocationDetails"]= "Southwest Corner"
-    #br["ctctEmail"]= "oliver@waterfrontbia.com"
-    #br["ctctPhoneNumb"]= "4168450084"
-
     br["probCrossStreet1"] = street1
     br["probCrossStreet2"] = street2
     br["probLocationDetails"]= locationdetail
@@ -53,6 +47,8 @@ def do_processing(street1, street2, locationdetail, email, phone):
     br["additional_information"]="Reported by the waterfront BIA"
 
     br.submit()
+    
+    br.select_form(nr=0)
 
     response = br.submit()
     return (response.read())
